@@ -71,6 +71,13 @@ jobs:
           git commit -m "State $(date -u '+%Y-%m-%d %H:%M UTC')" || echo "no state changes"
           git push origin HEAD:data
 
+      # enablement: true turns Pages on (workflow build type) automatically on
+      # the first run in a fresh repo - no manual settings step needed.
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
