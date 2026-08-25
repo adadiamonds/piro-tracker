@@ -72,7 +72,7 @@
   "stuckDays": 13,
   "staleDays": 0,
   "refreshSeconds": 120,
-  "staleDataMinutes": 45,
+  "staleDataMinutes": 90,
   "metalColors": {
     "18k white": {
       "bg": "#cfe0f2",
