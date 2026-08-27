@@ -1,10 +1,10 @@
 name: Update tracker
 on:
-  # GitHub schedule triggers are best-effort and often lag 5-25 minutes.
-  # Firing every 5 minutes keeps the *effective* cadence near 10 minutes;
-  # the concurrency group below prevents overlapping runs.
-  schedule:
-    - cron: '*/5 * * * *'
+  # No schedule trigger here: GitHub's schedule event proved unreliable for
+  # this repo (runs silently stopped firing for 8+ hours despite the workflow
+  # showing "active"). heartbeat.yml drives the ~10-min cadence instead via
+  # workflow_dispatch, which is punctual. push/workflow_dispatch stay so a
+  # code change or manual run still rebuilds immediately.
   workflow_dispatch:
   push:
     branches: [main]

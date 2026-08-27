@@ -1,0 +1,71 @@
+name: Heartbeat
+# GitHub's `schedule` trigger has been unreliable for this repo: the gap
+# between runs grew from ~1 hour to 8+ hours and the trigger stopped firing
+# entirely, even though the workflow shows as "active". workflow_dispatch
+# (API-triggered) is punctual where schedule is not, so this workflow drives
+# the update cadence itself: dispatch update.yml every ~10 min for ~40 min,
+# then hand off to a fresh heartbeat run via workflow_dispatch.
+#
+# The concurrency group (cancel-in-progress: true) is what keeps this safe -
+# GitHub enforces at most one active "beat" job at a time, server-side, no
+# matter how many triggers fire. A new trigger (schedule safety-net, a push,
+# or the self-handoff) always cancels any stale run and starts clean, so the
+# chain can't fork or run away.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  # Safety net only, in case the self-chain ever dies (a crashed runner, a
+  # failed handoff call). Frequent firings are harmless - see concurrency.
+  schedule:
+    - cron: '*/20 * * * *'
+
+permissions:
+  actions: write
+
+concurrency:
+  group: heartbeat
+  cancel-in-progress: true
+
+jobs:
+  beat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Dispatch updates, then hand off to the next heartbeat
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'EOF'
+          import json, os, time, urllib.request
+
+          TOKEN = os.environ["GH_TOKEN"]
+          API = f"https://api.github.com/repos/{os.environ['REPO']}/actions"
+
+          def dispatch(workflow, tries=3):
+              req = urllib.request.Request(
+                  f"{API}/workflows/{workflow}/dispatches",
+                  data=json.dumps({"ref": "main"}).encode(),
+                  headers={"Authorization": f"Bearer {TOKEN}",
+                           "Accept": "application/vnd.github+json"},
+                  method="POST")
+              for attempt in range(tries):
+                  try:
+                      urllib.request.urlopen(req, timeout=30)
+                      return
+                  except Exception as e:
+                      if attempt == tries - 1:
+                          raise
+                      print(f"  (retrying {workflow} dispatch after: {e})", flush=True)
+                      time.sleep(15)
+
+          for i in range(5):
+              dispatch("update.yml")
+              print(f"dispatched update.yml ({i + 1}/5)", flush=True)
+              if i < 4:
+                  time.sleep(600)
+
+          dispatch("heartbeat.yml")
+          print("handed off to the next heartbeat run")
+          EOF
