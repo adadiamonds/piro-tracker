@@ -685,6 +685,10 @@
     {
      "since": "2026-08-31 18:33",
      "stage": "QA"
+    },
+    {
+     "since": "2026-08-31 18:33",
+     "stage": "Rhodium"
     }
    ],
    "last_seen": "2026-08-31 18:33"
@@ -9954,6 +9958,10 @@
     {
      "since": "2026-08-28 14:56",
      "stage": "Setting queue"
+    },
+    {
+     "since": "2026-08-31 18:33",
+     "stage": "Stone Setting"
     }
    ],
    "last_seen": "2026-08-31 18:33"
