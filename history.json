@@ -1318,6 +1318,10 @@
     {
      "since": "2026-08-27 20:19",
      "stage": "Production Prep"
+    },
+    {
+     "since": "2026-08-31 14:34",
+     "stage": "3D Print Queue"
     }
    ],
    "last_seen": "2026-08-31 14:34"
@@ -4282,6 +4286,10 @@
     {
      "since": "2026-08-21 20:20",
      "stage": "Production Prep"
+    },
+    {
+     "since": "2026-08-31 14:34",
+     "stage": "3D Print Queue"
     }
    ],
    "last_seen": "2026-08-31 14:34"
@@ -10957,6 +10965,10 @@
     {
      "since": "2026-08-31 13:23",
      "stage": "Production Prep"
+    },
+    {
+     "since": "2026-08-31 14:34",
+     "stage": "3D Print Queue"
     }
    ],
    "last_seen": "2026-08-31 14:34"
