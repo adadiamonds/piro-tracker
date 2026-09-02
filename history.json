@@ -18934,6 +18934,10 @@
     {
      "since": "2026-09-02 14:24",
      "stage": "Rhodium"
+    },
+    {
+     "since": "2026-09-02 14:24",
+     "stage": "SP Fulfillment queue"
     }
    ],
    "last_seen": "2026-09-02 14:24"
