@@ -13253,6 +13253,10 @@
     {
      "since": "2026-09-03 19:06",
      "stage": "3D Print Queue"
+    },
+    {
+     "since": "2026-09-03 19:06",
+     "stage": "CAD Queue"
     }
    ],
    "last_seen": "2026-09-03 19:06"
