@@ -21163,6 +21163,10 @@
     {
      "since": "2026-09-11 17:55",
      "stage": "PLATINA Fulfillment queue"
+    },
+    {
+     "since": "2026-09-11 17:55",
+     "stage": "PLATINA invoice/ship"
     }
    ],
    "last_seen": "2026-09-11 17:55"
@@ -23159,6 +23163,10 @@
     {
      "since": "2026-09-11 17:25",
      "stage": "Tree Breakdown "
+    },
+    {
+     "since": "2026-09-11 17:55",
+     "stage": "Casting Filled"
     }
    ],
    "last_seen": "2026-09-11 17:55"
