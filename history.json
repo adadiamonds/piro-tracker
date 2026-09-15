@@ -9978,6 +9978,10 @@
     {
      "since": "2026-09-15 19:06",
      "stage": "SP Fulfillment queue"
+    },
+    {
+     "since": "2026-09-15 20:46",
+     "stage": "Invoice & Ship"
     }
    ],
    "last_seen": "2026-09-15 20:46"
@@ -18288,6 +18292,10 @@
     {
      "since": "2026-09-14 13:11",
      "stage": "Jewelry Assembly"
+    },
+    {
+     "since": "2026-09-15 20:46",
+     "stage": "Stone Setting"
     }
    ],
    "last_seen": "2026-09-15 20:46"
