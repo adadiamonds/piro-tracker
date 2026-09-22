@@ -35507,6 +35507,10 @@
     {
      "since": "2026-09-22 15:15",
      "stage": "3D Printing"
+    },
+    {
+     "since": "2026-09-22 15:15",
+     "stage": "Casting Queue"
     }
    ],
    "last_seen": "2026-09-22 15:15"
