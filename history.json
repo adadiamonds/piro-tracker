@@ -7827,6 +7827,10 @@
     {
      "since": "2026-09-28 15:14",
      "stage": "QA"
+    },
+    {
+     "since": "2026-09-28 15:14",
+     "stage": "Engraving"
     }
    ],
    "last_seen": "2026-09-28 15:14"
@@ -42778,6 +42782,15 @@
     {
      "since": "2026-09-28 14:54",
      "stage": "3D Print Queue"
+    }
+   ],
+   "last_seen": "2026-09-28 15:14"
+  },
+  "JO-094023-01": {
+   "journey": [
+    {
+     "since": "2026-09-28 15:14",
+     "stage": "Stone picking Queue"
     }
    ],
    "last_seen": "2026-09-28 15:14"
