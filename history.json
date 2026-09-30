@@ -46028,6 +46028,10 @@
     {
      "since": "2026-09-30 18:23",
      "stage": "Stone picking Queue"
+    },
+    {
+     "since": "2026-09-30 20:14",
+     "stage": "Stone(s) Filled"
     }
    ],
    "last_seen": "2026-09-30 20:14"
