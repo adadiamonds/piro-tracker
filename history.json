@@ -46073,6 +46073,10 @@
     {
      "since": "2026-09-30 15:16",
      "stage": "WAX approval"
+    },
+    {
+     "since": "2026-10-01 15:17",
+     "stage": "Casting Queue"
     }
    ],
    "last_seen": "2026-10-01 15:17"
